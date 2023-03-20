@@ -12,7 +12,6 @@ fstream file;
    file.open("student.txt",ios::out|ios::app);
      char c='Y';
     Student s;
-//هنا ليه عرفنا الاوبجيكت بره اللوب . هنا انا عملت اوبجيكت واحد بس وبغير في بياناته مش بعمل كذا ريكورد
     do{
 
     cout<<"what is your id? : ";
@@ -138,8 +137,19 @@ void seekingFiles(){
         in.close();
     }
 }
+void copyFile(){
+    char c;
+    ifstream a ("test.txt",ios::in);
+    ofstream b ("copyversion",ios::out|ios::app);
+    if (a.is_open()){
+        while(a.get(c))
+            b.put(c);
+    }
+    a.close();
+    b.close();
+
+}
 int main()
 {
-
     return 0;
 }
